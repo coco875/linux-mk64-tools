@@ -42,7 +42,7 @@ jobs:
           cd mman-win32
           cd build
           msys2 -c 'cmake .. && make'
-          msys2 -c 'sudo make install'
+          msys2 -c 'make install'
       - name: build ido5.3_recomp
         run: |
           cd ido5.3_recomp
