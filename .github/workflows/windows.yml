@@ -24,7 +24,7 @@ jobs:
         run: |
           cd ido5.3_recomp
           msys2 -c 'g++ recomp.cpp -o recomp -g -lcapstone -Dugen53'
-      - name: build tools
+      - name: Generate source file
         run: |
           cd ido5.3_recomp
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/as1 > as1_c.c'
@@ -36,3 +36,15 @@ jobs:
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/uld > uld_c.c'
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/umerge > umerge_c.c'
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/uopt > uopt_c.c'
+      - name: build ido5.3_compiler
+        run: |
+          cd ido5.3_compiler
+          msys2 -c 'gcc libc_impl.c as1_c.c -o as1 -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c cc_c.c -o cc -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c cfe_c.c -o cfe -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c copt_c.c -o copt -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c ugen_c.c -o ugen -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c ujoin_c.c -o ujoin -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c uld_c.c -o uld -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c umerge_c.c -o umerge -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c uopt_c.c -o uopt -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
