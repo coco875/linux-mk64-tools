@@ -11,11 +11,7 @@
 #include <vector>
 #include <string>
 
-#if defined(_WIN32)
-#include <capstone/capstone.h>
-#else
 #include <capstone.h>
-#endif
 
 #include "elf.h"
 
