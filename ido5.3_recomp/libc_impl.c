@@ -1,5 +1,4 @@
 #define _GNU_SOURCE // for sigset
-#define __CYGWIN__
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdint.h>
