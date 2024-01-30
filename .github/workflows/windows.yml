@@ -46,12 +46,12 @@ jobs:
       - name: build ido5.3_recomp
         run: |
           cd ido5.3_recomp
-          msys2 -c 'gcc libc_impl.c as1_c.c -o as1 -g -fno-strict-aliasing -L../mman-win32 -lmman -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c cc_c.c -o cc -g -fno-strict-aliasing -L../mman-win32 -lmman -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c cfe_c.c -o cfe -g -fno-strict-aliasing -L../mman-win32 -lmman -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c copt_c.c -o copt -g -fno-strict-aliasing -L../mman-win32 -lmman -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c ugen_c.c -o ugen -g -fno-strict-aliasing -L../mman-win32 -lmman -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c ujoin_c.c -o ujoin -g -fno-strict-aliasing -L../mman-win32 -lmman -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c uld_c.c -o uld -g -fno-strict-aliasing -L../mman-win32 -lmman -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c umerge_c.c -o umerge -g -fno-strict-aliasing -L../mman-win32 -lmman -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c uopt_c.c -o uopt -g -fno-strict-aliasing -L../mman-win32 -lmman -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c -lmman as1_c.c -o as1 -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c -lmman cc_c.c -o cc -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c -lmman cfe_c.c -o cfe -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c -lmman copt_c.c -o copt -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c -lmman ugen_c.c -o ugen -g -fno-strict-aliasingn -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c -lmman ujoin_c.c -o ujoin -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c -lmman uld_c.c -o uld -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c -lmman umerge_c.c -o umerge -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c -lmman uopt_c.c -o uopt -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
