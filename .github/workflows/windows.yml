@@ -18,9 +18,11 @@ jobs:
           msys2 -c 'pacman -S gcc --noconfirm'
       - name: build recomp
         run: |
+          cd ido5.3_recomp
           g++ recomp.cpp -o recomp -g -lcapstone -Dugen53
       - name: build tools
         run: |
+          cd ido5.3_recomp
           ./recomp ../ido5.3_compiler/usr/lib/as1 > as1_c.c
           ./recomp ../ido5.3_compiler/usr/lib/cc > cc_c.c
           ./recomp ../ido5.3_compiler/usr/lib/cfe > cfe_c.c
