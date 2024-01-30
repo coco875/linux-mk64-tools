@@ -1,4 +1,5 @@
 #define _GNU_SOURCE // for sigset
+#define __CYGWIN__
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -7,7 +8,6 @@
 #include <math.h>
 #include <assert.h>
 #include <errno.h>
-#define __CYGWIN__
 #include <time.h>
 #include <limits.h>
 #include <ctype.h>
