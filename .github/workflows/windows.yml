@@ -41,11 +41,7 @@ jobs:
           git clone https://github.com/alitrack/mman-win32
           cd mman-win32
           msys2 -c 'cmake .'
-      - name: Publish packaged artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: mips-tools-chain
-          path: C:\msys64\mingw64
+          dir .
       - name: build ido5.3_recomp
         run: |
           cd ido5.3_recomp
