@@ -28,6 +28,8 @@
 #include <sys/mman.h>
 #else
 #include "mman.h"
+#include "time.h"
+#include "wait.h"
 #endif
 
 #include <sys/types.h>
