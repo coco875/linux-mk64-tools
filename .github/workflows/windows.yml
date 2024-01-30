@@ -23,7 +23,7 @@ jobs:
       - name: build recomp
         run: |
           cd ido5.3_recomp
-          g++ recomp.cpp -o recomp -g -lcapstone -Dugen53
+          msys2 -c 'g++ recomp.cpp -o recomp -g -lcapstone -Dugen53'
       - name: build tools
         run: |
           cd ido5.3_recomp
