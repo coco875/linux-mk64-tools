@@ -24,10 +24,10 @@
 
 #ifdef __linux__
 #include <sys/mman.h>
+#include <sys/times.h>
 #endif
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/times.h>
 #include <sys/file.h>
 #include <sys/wait.h>
 #include <fcntl.h>
