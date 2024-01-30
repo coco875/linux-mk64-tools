@@ -25,7 +25,7 @@ jobs:
       - name: create archive
         run: |
           mkdir out
-          cp mingw64 -r out
+          cp C:\msys64\mingw64 -r out
           cp ido5.3_recomp out
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
