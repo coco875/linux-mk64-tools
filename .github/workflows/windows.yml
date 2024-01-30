@@ -28,7 +28,7 @@ jobs:
         run: |
           cd ido5.3_recomp
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/as1 > as1_c.c'
-          msys2 -c './recomp ../ido5.3_compiler/usr/lib/cc > cc_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/usr/bin/cc > cc_c.c'
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/cfe > cfe_c.c'
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/copt > copt_c.c'
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/ugen > ugen_c.c'
