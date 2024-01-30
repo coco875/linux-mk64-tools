@@ -26,7 +26,7 @@ jobs:
         run: |
           mkdir out
           cp C:\msys64\mingw64 -r out
-          cp ido5.3_recomp out
+          cp ido5.3_recomp -r out
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
