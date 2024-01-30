@@ -1,0 +1,22 @@
+name: Windows Compile
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    if: false
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up MinGW
+        uses: egor-tensin/setup-mingw@v2
+        with:
+          platform: x64
+      - name: Install deps
+        run: |
+          pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make python3 git --noconfirm
+          pacman -S gcc --noconfirm
