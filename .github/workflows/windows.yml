@@ -14,6 +14,21 @@ jobs:
       - uses: msys2/setup-msys2@v2
       - name: Install deps
         run: |
-          msys2 -c 'wget --noconfirm'
+          msys2 -c 'pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make cmake python3 git msys2-runtime-devel wget --noconfirm'
+          msys2 -c 'pacman -S gcc --noconfirm'
           msys2 -c 'wget https://github.com/decompals/ido-static-recomp/releases/download/v1.1/ido-5.3-recomp-windows.tar.gz'
-          tar -xvf ido-5.3-recomp-windows.tar.gz ido5.3_recomp
+          tar -xvzf ido-5.3-recomp-windows.tar.gz ido5.3_recomp
+      - name: merge gcc toolchain
+        run: |
+          msys2 -c 'wget https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip'
+          unzip gcc-toolchain-mips64-win64.zip -d C:\msys64\mingw64\
+      - name: create archive
+        run: |
+          mkdir out
+          cp mingw64 -r out
+          cp ido5.3_recomp out
+      - name: Publish packaged artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mips-tools-chain
+          path: out
