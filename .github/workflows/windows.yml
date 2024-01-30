@@ -34,8 +34,8 @@ jobs:
         run: |
           mkdir out
           mkdir out/tools
-          cp C:\msys64\mingw64 -r out
-          cp * -r out/tools
+          cp C:/msys64/mingw64/bin -r out
+          cp n64graphics displaylist_packer mio0 tkmk00 n64cksum extract_data_for_mio ido5.3_recomp -r out/tools
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
