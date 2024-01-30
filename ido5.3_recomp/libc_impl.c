@@ -7,6 +7,7 @@
 #include <math.h>
 #include <assert.h>
 #include <errno.h>
+#define __CYGWIN__
 #include <time.h>
 #include <limits.h>
 #include <ctype.h>
