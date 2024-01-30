@@ -14,7 +14,7 @@ jobs:
       - uses: msys2/setup-msys2@v2
       - name: Install deps
         run: |
-          msys2 -c 'pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make python3 git --noconfirm'
+          msys2 -c 'pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make cmake python3 git --noconfirm'
           msys2 -c 'pacman -S gcc --noconfirm'
       - name: merge gcc toolchain
         run: |
@@ -36,6 +36,13 @@ jobs:
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/uld > uld_c.c'
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/umerge > umerge_c.c'
           msys2 -c './recomp ../ido5.3_compiler/usr/lib/uopt > uopt_c.c'
+      - name: Install mman-win32
+        run: |
+          msys2 -c 'git clone https://github.com/boldowa/mman-win32.git'
+          cd mman-win32
+          cd build
+          msys2 -c 'cmake .. && make'
+          msys2 -c 'sudo make install'
       - name: build ido5.3_recomp
         run: |
           cd ido5.3_recomp
