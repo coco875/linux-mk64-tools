@@ -25,11 +25,8 @@
 #ifdef __linux__
 #include <sys/times.h>
 #include <sys/wait.h>
-#include <sys/mman.h>
-#else
-#include <mman.h>
 #endif
-
+#include <sys/mman.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/file.h>
