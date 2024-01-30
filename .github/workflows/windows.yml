@@ -40,8 +40,7 @@ jobs:
         run: |
           git clone https://github.com/alitrack/mman-win32
           cd mman-win32
-          msys2 -c './configure --prefix=C:\msys64\mingw64'
-          dir .
+          msys2 -c './configure --prefix=C:/msys64/mingw64'
       - name: build ido5.3_recomp
         run: |
           cd ido5.3_recomp
