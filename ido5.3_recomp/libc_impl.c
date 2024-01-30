@@ -28,7 +28,7 @@
 #include <sys/mman.h>
 #else
 #include "mman.h"
-#include "sys/time.h"
+#include <sys/time.h>
 #include "wait.h"
 #endif
 
