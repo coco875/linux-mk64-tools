@@ -14,8 +14,8 @@ jobs:
       - uses: msys2/setup-msys2@v2
       - name: Install deps
         run: |
-          pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make python3 git --noconfirm
-          pacman -S gcc --noconfirm
+          msys2 -c 'pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make python3 git --noconfirm'
+          msys2 -c 'pacman -S gcc --noconfirm'
       - name: build recomp
         run: |
           g++ recomp.cpp -o recomp -g -lcapstone -Dugen53
