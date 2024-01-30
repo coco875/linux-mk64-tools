@@ -16,15 +16,15 @@ jobs:
           sudo apt install binutils-mips-linux-gnu build-essential pkg-config git binutils-mips-linux-gnu python3 zlib1g-dev libaudiofile-dev libcapstone-dev
       - name: Find path
         run: |
-          whereis mips-linux-gnu-as
-          ldd mips-linux-gnu-as
-          whereis mips-linux-gnu-gcc
-          ldd mips-linux-gnu-gcc
-          whereis mips-linux-gnu-ld
-          ldd mips-linux-gnu-ld
-          whereis mips-linux-gnu-ar
-          ldd mips-linux-gnu-ar
-          whereis mips-linux-gnu-objdump
-          ldd mips-linux-gnu-objdump
-          whereis mips-linux-gnu-objcopy
-          ldd mips-linux-gnu-objcopy
+          which mips-linux-gnu-as
+          ldd $(which mips-linux-gnu-as)
+          which mips-linux-gnu-gcc
+          ldd $(which mips-linux-gnu-gcc)
+          which mips-linux-gnu-ld
+          ldd $(which mips-linux-gnu-ld)
+          which mips-linux-gnu-ar
+          ldd $(which mips-linux-gnu-ar)
+          which mips-linux-gnu-objdump
+          ldd $(which mips-linux-gnu-objdump)
+          which mips-linux-gnu-objcopy
+          ldd $(which mips-linux-gnu-objcopy)
