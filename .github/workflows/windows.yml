@@ -42,6 +42,9 @@ jobs:
           cd mman-win32
           cp mman.c ../ido5.3_recomp
           cp mman.h ../ido5.3_recomp
+          cd ../ido5.3_recomp
+          wget https://github.com/win32ports/sys_time_h/raw/master/sys/time.h
+          wget https://github.com/win32ports/sys_wait_h/raw/master/sys/wait.h
       - name: build ido5.3_recomp
         run: |
           cd ido5.3_recomp
