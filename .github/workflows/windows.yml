@@ -20,7 +20,7 @@ jobs:
         run: |
           msys2 -c 'wget https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip'
           unzip gcc-toolchain-mips64-win64.zip
-          msys2 -c 'cp -r gcc-toolchain-mips64-win64/* /mingw64/'
+          dir C:\
       - name: build recomp
         run: |
           cd ido5.3_recomp
