@@ -27,15 +27,15 @@ jobs:
       - name: Generate source file
         run: |
           cd ido5.3_recomp
-          msys2 -c './recomp ../ido5.3_compiler/usr/lib/as1 > as1_c.c'
-          msys2 -c './recomp ../ido5.3_compiler/usr/bin/cc > cc_c.c'
-          msys2 -c './recomp ../ido5.3_compiler/usr/lib/cfe > cfe_c.c'
-          msys2 -c './recomp ../ido5.3_compiler/usr/lib/copt > copt_c.c'
-          msys2 -c './recomp ../ido5.3_compiler/usr/lib/ugen > ugen_c.c'
-          msys2 -c './recomp ../ido5.3_compiler/usr/lib/ujoin > ujoin_c.c'
-          msys2 -c './recomp ../ido5.3_compiler/usr/lib/uld > uld_c.c'
-          msys2 -c './recomp ../ido5.3_compiler/usr/lib/umerge > umerge_c.c'
-          msys2 -c './recomp ../ido5.3_compiler/usr/lib/uopt > uopt_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/lib/as1 > as1_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/bin/cc > cc_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/lib/cfe > cfe_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/lib/copt > copt_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/lib/ugen > ugen_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/lib/ujoin > ujoin_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/lib/uld > uld_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/lib/umerge > umerge_c.c'
+          msys2 -c './recomp ../ido5.3_compiler/lib/uopt > uopt_c.c'
       - name: build ido5.3_compiler
         run: |
           cd ido5.3_compiler
