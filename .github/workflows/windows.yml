@@ -42,8 +42,8 @@ jobs:
           cd mman-win32
           msys2 -c './configure --prefix=C:/msys64/mingw64'
           msys2 -c 'make'
-          dir .
           msys2 -c 'make install'
+          dir C:/msys64/mingw64/include/sys
       - name: build ido5.3_recomp
         run: |
           cd ido5.3_recomp
