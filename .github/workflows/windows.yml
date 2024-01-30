@@ -22,11 +22,20 @@ jobs:
         run: |
           msys2 -c 'wget https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip'
           unzip gcc-toolchain-mips64-win64.zip -d C:\msys64\mingw64\
+      - name: Compile tools
+        run: |
+          gcc -I . -Wall -Wextra -Wno-unused-parameter -pedantic -std=c99 -O2 -s -DN64GRAPHICS_STANDALONE n64graphics.c utils.c -o n64graphics
+          gcc -I . -Wall -Wextra -Wno-unused-parameter -pedantic -std=c99 -O2 -s -Wno-unused-result displaylist_packer.c -o displaylist_packer
+          gcc -I . -Wall -Wextra -Wno-unused-parameter -pedantic -std=c99 -O2 -s -DMIO0_STANDALONE libmio0.c -o mio0
+          gcc -I . -Wall -Wextra -Wno-unused-parameter -pedantic -std=c99 -O2 -s -DTKMK00_STANDALONE libtkmk00.c utils.c -o tkmk00
+          gcc -I . -Wall -Wextra -Wno-unused-parameter -pedantic -std=c99 -O2 -s -DN64CKSUM_STANDALONE n64cksum.c utils.c -o n64cksum
+          gcc -I . -Wall -Wextra -Wno-unused-parameter -pedantic -std=c99 -O2 -s extract_data_for_mio.c -o n64graphics extract_data_for_mio
       - name: create archive
         run: |
           mkdir out
+          mkdir out/tools
           cp C:\msys64\mingw64 -r out
-          cp ido5.3_recomp -r out
+          cp * -r out/tools
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
