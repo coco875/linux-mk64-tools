@@ -46,12 +46,12 @@ jobs:
       - name: build ido5.3_recomp
         run: |
           cd ido5.3_recomp
-          msys2 -c 'gcc libc_impl.c mman.c as1_c.c -o as1 -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c mman.c cc_c.c -o cc -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c mman.c cfe_c.c -o cfe -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c mman.c copt_c.c -o copt -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c mman.c ugen_c.c -o ugen -g -fno-strict-aliasingn -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c mman.c ujoin_c.c -o ujoin -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c mman.c uld_c.c -o uld -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c mman.c umerge_c.c -o umerge -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
-          msys2 -c 'gcc libc_impl.c mman.c uopt_c.c -o uopt -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2'
+          msys2 -c 'gcc libc_impl.c mman.c as1_c.c -o as1 -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2 -I/usr/include'
+          msys2 -c 'gcc libc_impl.c mman.c cc_c.c -o cc -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2 -I/usr/include'
+          msys2 -c 'gcc libc_impl.c mman.c cfe_c.c -o cfe -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2 -I/usr/include'
+          msys2 -c 'gcc libc_impl.c mman.c copt_c.c -o copt -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2 -I/usr/include'
+          msys2 -c 'gcc libc_impl.c mman.c ugen_c.c -o ugen -g -fno-strict-aliasingn -lm -no-pie -DIDO53 -O2 -I/usr/include'
+          msys2 -c 'gcc libc_impl.c mman.c ujoin_c.c -o ujoin -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2 -I/usr/include'
+          msys2 -c 'gcc libc_impl.c mman.c uld_c.c -o uld -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2 -I/usr/include'
+          msys2 -c 'gcc libc_impl.c mman.c umerge_c.c -o umerge -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2 -I/usr/include'
+          msys2 -c 'gcc libc_impl.c mman.c uopt_c.c -o uopt -g -fno-strict-aliasing -lm -no-pie -DIDO53 -O2 -I/usr/include'
