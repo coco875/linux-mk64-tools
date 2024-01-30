@@ -22,7 +22,9 @@
 #include <mach/vm_page_size.h>
 #endif
 
+#ifdef __linux__
 #include <sys/mman.h>
+#endif
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/times.h>
