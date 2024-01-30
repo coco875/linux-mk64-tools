@@ -14,9 +14,16 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt install binutils-mips-linux-gnu build-essential pkg-config git binutils-mips-linux-gnu python3 zlib1g-dev libaudiofile-dev libcapstone-dev
+      - name: build tools
+        run: |
+          make
       - name: create archive
         run: |
           mkdir out
+          mkdir out/tools
+          cp mio0 n64graphics displaylist_packer n64cksum tkmk00 extract_data_for_mio out/tools
+          mkdir out/tools/ido5.3_recomp
+          cp idod5.3_recomp/cc out/tools/ido5.3_recomp
           cp /usr/bin/mips-linux-gnu-* out/
           cp /lib/x86_64-linux-gnu/libz.so.1 /lib/x86_64-linux-gnu/lib*mips* out/
       - name: Publish packaged artifacts
