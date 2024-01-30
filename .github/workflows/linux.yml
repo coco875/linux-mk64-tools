@@ -1,0 +1,30 @@
+name: Linux Compile
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt install build-essential pkg-config git binutils-mips-linux-gnu python3 zlib1g-dev libaudiofile-dev libcapstone-dev
+      - name: Find path
+        run: |
+          whereis mips-linux-gnu-as
+          ldd mips-linux-gnu-as
+          whereis mips-linux-gnu-gcc
+          ldd mips-linux-gnu-gcc
+          whereis mips-linux-gnu-ld
+          ldd mips-linux-gnu-ld
+          whereis mips-linux-gnu-ar
+          ldd mips-linux-gnu-ar
+          whereis mips-linux-gnu-objdump
+          ldd mips-linux-gnu-objdump
+          whereis mips-linux-gnu-objcopy
+          ldd mips-linux-gnu-objcopy
