@@ -34,10 +34,6 @@ extract_data_for_mio_SOURCES := extract_data_for_mio.c
 # Build tools and recomp
 all: $(PROGRAMS) subsystem
 
-# Build recomp
-subsystem:
-	$(MAKE) -C ido5.3_recomp
-
 # Remove generated files
 clean:
 	$(RM) $(PROGRAMS)
