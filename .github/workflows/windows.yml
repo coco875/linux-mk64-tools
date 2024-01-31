@@ -36,7 +36,6 @@ jobs:
           mkdir out/mingw64
           cp C:/msys64/mingw64/bin -r out
           msys2 -c 'cp C:/msys64/mingw64 -fr out'
-          dir C:/
           msys2 -c 'cp C:/mingw64/bin/gcc* -fr out/bin'
           msys2 -c 'cp C:/mingw64/bin/git* -fr out/bin'
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
