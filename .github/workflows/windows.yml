@@ -16,8 +16,6 @@ jobs:
         run: |
           msys2 -c 'pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make git --noconfirm'
           msys2 -c 'pacman -S gcc --noconfirm'
-          msys2 -c 'wget https://github.com/decompals/ido-static-recomp/releases/download/v1.1/ido-5.3-recomp-windows.tar.gz'
-          tar -xvzf ido-5.3-recomp-windows.tar.gz -C ido5.3_recomp
       - name: merge gcc toolchain
         run: |
           msys2 -c 'wget https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip'
@@ -42,7 +40,9 @@ jobs:
           cp tkmk00* out/tools
           cp n64cksum* out/tools
           cp extract_data_for_mio* out/tools
-          cp ido5.3_recomp -r out/tools
+          mkdir out/tools/ido5.3_recomp
+          msys2 -c 'wget https://github.com/decompals/ido-static-recomp/releases/download/v1.1/ido-5.3-recomp-windows.tar.gz'
+          tar -xvzf ido-5.3-recomp-windows.tar.gz -C out/tools/ido5.3_recomp
           cp C:/msys64/usr/bin/msys-2.0.dll out/tools/ido5.3_recomp
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
