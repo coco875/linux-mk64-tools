@@ -18,7 +18,7 @@ jobs:
           msys2 -c 'pacman -S gcc --noconfirm'
       - name: locate package
         run: |
-          whereis iconv
+          where iconv
       - name: merge gcc toolchain
         run: |
           msys2 -c 'wget https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip'
