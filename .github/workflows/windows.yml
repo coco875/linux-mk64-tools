@@ -14,7 +14,7 @@ jobs:
       - uses: msys2/setup-msys2@v2
       - name: Install deps
         run: |
-          msys2 -c 'pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make git --noconfirm'
+          msys2 -c 'pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make git mingw-w64-x86_64-iconv --noconfirm'
           msys2 -c 'pacman -S gcc --noconfirm'
       - name: merge gcc toolchain
         run: |
@@ -31,6 +31,7 @@ jobs:
           msys2 -c 'cp C:/msys64/mingw64 -fr out'
           msys2 -c 'cp C:/mingw64/bin/gcc* -fr out/mingw64'
           msys2 -c 'cp C:/mingw64/bin/git* -fr out/mingw64'
+          msys2 -c 'cp C:/mingw64/bin/iconv* -fr out/mingw64'
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d out/mingw64/bin
           mkdir out/tools
