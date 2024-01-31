@@ -14,7 +14,7 @@ jobs:
       - uses: msys2/setup-msys2@v2
       - name: Install deps
         run: |
-          msys2 -c 'pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make cmake python3 git wget --noconfirm'
+          msys2 -c 'pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-capstone pkgconf make python3 git --noconfirm'
           msys2 -c 'pacman -S gcc --noconfirm'
           msys2 -c 'wget https://github.com/decompals/ido-static-recomp/releases/download/v1.1/ido-5.3-recomp-windows.tar.gz'
           tar -xvzf ido-5.3-recomp-windows.tar.gz -C ido5.3_recomp
@@ -44,6 +44,7 @@ jobs:
           cp extract_data_for_mio* out/tools
           cp ido5.3_recomp -r out/tools
           cp C:/msys64/usr/bin/msys-2.0.dll out/tools/ido5.3_recomp
+          dir C:/msys64
           cp C:/msys64 -r out/tools/mingw64/bin
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
