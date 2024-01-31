@@ -36,14 +36,16 @@ jobs:
           mkdir out/mingw64
           cp C:/msys64/mingw64/bin -r out/mingw64
           mkdir out/tools
-          cp n64graphics* -r out/tools
-          cp displaylist_packer* -r out/tools
-          cp mio0* -r out/tools
-          cp tkmk00* -r out/tools
-          cp n64cksum* -r out/tools
-          cp extract_data_for_mio* -r out/tools
+          cp n64graphics* out/tools
+          cp displaylist_packer* out/tools
+          cp mio0* out/tools
+          cp tkmk00* out/tools
+          cp n64cksum* out/tools
+          cp extract_data_for_mio* out/tools
           cp ido5.3_recomp -r out/tools
           cp C:/msys64/usr/bin/msys-2.0.dll out/tools/ido5.3_recomp
+          cp C:/msys64/usr/bin/python* out/tools/mingw64/bin
+          cp C:/msys64/usr/bin/gcc* out/tools/mingw64/bin
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
