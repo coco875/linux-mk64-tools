@@ -32,7 +32,7 @@ extract_data_for_mio_SOURCES := extract_data_for_mio.c
 
 
 # Build tools and recomp
-all: $(PROGRAMS) subsystem
+all: $(PROGRAMS)
 
 # Remove generated files
 clean:
