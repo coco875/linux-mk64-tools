@@ -35,6 +35,8 @@ jobs:
           mkdir out
           mkdir out/mingw64
           cp C:/msys64/mingw64/bin -r out/mingw64
+          cp C:/msys64/usr/bin -r out/mingw64
+          cp C:/mingw64/bin -r out/mingw64
           mkdir out/tools
           cp n64graphics* out/tools
           cp displaylist_packer* out/tools
@@ -46,7 +48,6 @@ jobs:
           cp C:/msys64/usr/bin/msys-2.0.dll out/tools/ido5.3_recomp
           msys2 -c 'whereis python3'
           msys2 -c 'whereis gcc'
-          cp C:/msys64 -r out
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
