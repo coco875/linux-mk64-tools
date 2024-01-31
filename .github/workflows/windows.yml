@@ -36,9 +36,8 @@ jobs:
           mkdir out/mingw64
           cp C:/msys64/mingw64/bin -r out/mingw64
           msys2 -c 'cp C:/msys64/mingw64 -fr out'
-          dir C:/mingw64/bin
-          msys2 -c 'cp C:/mingw64/bin -fr out/mingw64'
-          msys2 -c 'cp C:/mingw64/lib -fr out/mingw64'
+          dir C:/
+          msys2 -c 'cp C:/mingw64/bin/gcc* -fr out/mingw64'
           msys2 -c 'cp C:/mingw64/bin/gcc* -fr out/mingw64'
           mkdir out/tools
           cp n64graphics* out/tools
