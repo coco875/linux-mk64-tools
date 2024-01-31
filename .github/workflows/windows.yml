@@ -39,7 +39,7 @@ jobs:
           msys2 -c 'cp C:/mingw64/bin/gcc* -fr out/mingw64'
           msys2 -c 'cp C:/mingw64/bin/git* -fr out/mingw64'
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
-          unzip python-3.12.1-embed-amd64.zip -d out/
+          unzip python-3.12.1-embed-amd64.zip -d out/mingw64
           mkdir out/tools
           cp n64graphics* out/tools
           cp displaylist_packer* out/tools
