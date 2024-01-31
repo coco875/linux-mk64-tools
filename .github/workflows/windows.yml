@@ -44,8 +44,8 @@ jobs:
           cp extract_data_for_mio* out/tools
           cp ido5.3_recomp -r out/tools
           cp C:/msys64/usr/bin/msys-2.0.dll out/tools/ido5.3_recomp
-          cp C:/msys64/usr/bin/python* out/tools/mingw64/bin
-          cp C:/msys64/usr/bin/gcc* out/tools/mingw64/bin
+          cp C:/msys64/bin/python* out/tools/mingw64/bin
+          cp C:/msys64/bin/gcc* out/tools/mingw64/bin
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
