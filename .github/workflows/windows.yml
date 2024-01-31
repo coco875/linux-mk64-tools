@@ -47,5 +47,5 @@ jobs:
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: mips-tools-chain
+          name: mips-tools-chain-windows
           path: out
