@@ -41,8 +41,8 @@ jobs:
           msys2 -c 'zstd -d mingw-w64-x86_64-gettext-0.22.4-3-any.pkg.tar.zst -o gettext.tar'
           msys2 -c 'tar -xvf gettext.tar'
           msys2 -c 'cp mingw64/bin/* out/mingw64/bin'
-          msys2 -c 'cp C:/msys64/mingw64/bin/* out/mingw64/bin'
-          msys2 -c 'cp C:/mingw64/bin/gcc* out/mingw64/bin'
+          cp C:/msys64/mingw64/bin/* out/mingw64/bin
+          cp C:/mingw64/bin/gcc* out/mingw64/bin
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d python
           msys2 -c 'cp python/* out/mingw64/bin'
