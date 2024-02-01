@@ -30,11 +30,14 @@ jobs:
           mkdir out
           mkdir out/mingw64
           msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst'
-          msys2 -c 'zstd -d mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst -o out/mingw64/iconv.tar'
+          msys2 -c 'zstd -d mingw-w64-x86_64-iconv-*.tar.zst -o iconv.tar'
+          msys2 -c 'tar -xvf iconv.tar -C out/mingw64'
           msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libiconv-1.17-3-any.pkg.tar.zst'
-          msys2 -c 'zstd -d mingw-w64-x86_64-libiconv-1.17-3-any.pkg.tar.zst -o out/mingw64/libiconv.tar'
+          msys2 -c 'zstd -d mingw-w64-x86_64-libiconv-*.tar.zst -o libiconv.tar'
+          msys2 -c 'tar -xvf libiconv.tar -C out/mingw64'
           msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-gettext-0.22.4-3-any.pkg.tar.zst'
-          msys2 -c 'zstd -d -xvf mingw-w64-x86_64-gettext-0.22.4-3-any.pkg.tar.zst -o out/mingw64/gettext.tar'
+          msys2 -c 'zstd -d -xvf mingw-w64-x86_64-gettext-*.tar.zst -o gettext.tar'
+          msys2 -c 'tar -xvf gettext.tar -C out/mingw64'
           cp C:/msys64/mingw64/bin -r out/mingw64
           msys2 -c 'cp C:/msys64/mingw64 -fr out'
           msys2 -c 'cp C:/mingw64/bin/gcc* -fr out/mingw64/bin'
