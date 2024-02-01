@@ -29,10 +29,15 @@ jobs:
         run: |
           mkdir out
           mkdir out/mingw64
+          msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst'
+          msys2 -c 'zstd -d mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst -o out/mingw64/iconv.tar'
+          msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libiconv-1.17-3-any.pkg.tar.zst'
+          msys2 -c 'zstd -d mingw-w64-x86_64-libiconv-1.17-3-any.pkg.tar.zst -o out/mingw64/libiconv.tar'
+          msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-gettext-0.22.4-3-any.pkg.tar.zst'
+          msys2 -c 'zstd -d -xvf mingw-w64-x86_64-gettext-0.22.4-3-any.pkg.tar.zst -o out/mingw64/gettext.tar'
           cp C:/msys64/mingw64/bin -r out/mingw64
           msys2 -c 'cp C:/msys64/mingw64 -fr out'
           msys2 -c 'cp C:/mingw64/bin/gcc* -fr out/mingw64/bin'
-          msys2 -c 'cp C:/mingw64/bin/iconv* -fr out/mingw64/bin'
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d out/mingw64/bin
           mkdir out/tools
@@ -43,12 +48,6 @@ jobs:
           cp n64cksum* out/tools
           cp extract_data_for_mio* out/tools
           mkdir out/tools/ido5.3_recomp
-          msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst'
-          msys2 -c 'zstd -d mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst -o out/mingw64'
-          msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libiconv-1.17-3-any.pkg.tar.zst'
-          msys2 -c 'zstd -d mingw-w64-x86_64-libiconv-1.17-3-any.pkg.tar.zst -o out/mingw64'
-          msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-gettext-0.22.4-3-any.pkg.tar.zst'
-          msys2 -c 'zstd -d -xvf mingw-w64-x86_64-gettext-0.22.4-3-any.pkg.tar.zst -o out/mingw64'
           msys2 -c 'wget https://github.com/decompals/ido-static-recomp/releases/download/v1.1/ido-5.3-recomp-windows.tar.gz'
           tar -xvzf ido-5.3-recomp-windows.tar.gz -C out/tools/ido5.3_recomp
           cp C:/msys64/usr/bin/msys-2.0.dll out/tools/ido5.3_recomp
