@@ -47,7 +47,7 @@ jobs:
           mkdir out/tools/ido5.3_recomp
           msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst'
           msys2 -c 'tar -xvzf mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst -C out/mingw64'
-          msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libiconv-1.17-3-any.pkg.tar.zst
+          msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libiconv-1.17-3-any.pkg.tar.zst'
           msys2 -c 'tar -xvzf mingw-w64-x86_64-libiconv-1.17-3-any.pkg.tar.zst -C out/mingw64'
           msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-gettext-0.22.4-3-any.pkg.tar.zst'
           msys2 -c 'tar -xvzf mingw-w64-x86_64-gettext-0.22.4-3-any.pkg.tar.zst -C out/mingw64'
