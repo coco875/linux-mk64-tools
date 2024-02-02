@@ -66,7 +66,7 @@ jobs:
           cp C:/mingw64/bin/gcc* out/mingw64/bin
           cp C:/mingw64/bin/make* out/mingw64/bin
           cp C:/mingw64/bin/grep* out/mingw64/bin
-         cp mips-toolchain/bin/* out/mingw64/bin
+          cp mips-toolchain/bin/* out/mingw64/bin
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d python
           msys2 -c 'cp python/* out/mingw64/bin'
