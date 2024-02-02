@@ -63,9 +63,7 @@ jobs:
           msys2 -c 'tar -xvf libwinpthread.tar'
           cp mingw64/bin/* out/mingw64/bin
           cp C:/msys64/mingw64/bin/* out/mingw64/bin
-          cp C:/mingw64/bin/gcc* out/mingw64/bin
-          cp C:/mingw64/bin/make* out/mingw64/bin
-          cp C:/mingw64/bin/mkdir* out/mingw64/bin
+          cp C:/mingw64/bin/* out/mingw64/bin
           cp mips-toolchain/bin/* out/mingw64/bin
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d python
