@@ -65,6 +65,7 @@ jobs:
           Copy-Item -Path mingw64/bin/* -Destination out/mingw64/bin -Recurse
           Copy-Item -Path mingw64/lib/* -Destination out/mingw64/lib -Recurse
           Copy-Item -Path C:/msys64/mingw64/bin/* -Destination out/mingw64/bin -Recurse
+          Copy-Item -Path C:/msys64/mingw64/lib/* -Destination out/mingw64/lib -Recurse
           Copy-Item -Path C:/mingw64/bin/* -Destination out/mingw64/bin -Recurse
           Copy-Item -Path C:/mingw64/lib/* -Destination out/mingw64/lib -Recurse
           Copy-Item -Path mips-toolchain/bin/* -Destination out/mingw64/bin -Recurse
