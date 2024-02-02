@@ -31,6 +31,7 @@ jobs:
           mkdir out
           mkdir out/mingw64
           mkdir out/mingw64/bin
+          mkdir out/mingw64/lib
           msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst'
           msys2 -c 'zstd -d mingw-w64-x86_64-iconv-1.17-3-any.pkg.tar.zst -o iconv.tar'
           msys2 -c 'tar -xvf iconv.tar'
@@ -62,8 +63,10 @@ jobs:
           msys2 -c 'zstd -d mingw-w64-x86_64-libwinpthread-git-11.0.0.r551.g86a5e0f41-1-any.pkg.tar.zst -o libwinpthread.tar'
           msys2 -c 'tar -xvf libwinpthread.tar'
           cp mingw64/bin/* out/mingw64/bin
+          cp mingw64/lib/* out/mingw64/lib
           cp C:/msys64/mingw64/bin/* out/mingw64/bin
           cp C:/mingw64/bin/* out/mingw64/bin
+          cp C:/mingw64/lib/* out/mingw64/lib
           cp mips-toolchain/bin/* out/mingw64/bin
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d python
