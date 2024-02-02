@@ -62,15 +62,11 @@ jobs:
           msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libwinpthread-git-11.0.0.r551.g86a5e0f41-1-any.pkg.tar.zst'
           msys2 -c 'zstd -d mingw-w64-x86_64-libwinpthread-git-11.0.0.r551.g86a5e0f41-1-any.pkg.tar.zst -o libwinpthread.tar'
           msys2 -c 'tar -xvf libwinpthread.tar'
-          msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-gcc-13.2.0-3-any.pkg.tar.zst'
-          msys2 -c 'zstd -d mingw-w64-x86_64-gcc-13.2.0-3-any.pkg.tar.zst -o gcc.tar'
-          msys2 -c 'tar -xvf gcc.tar'
+          msys2 -c 'wget https://github.com/skeeto/w64devkit/releases/download/v1.21.0/w64devkit-1.21.0.zip'
+          Expand-Archive -LiteralPath .\w64devkit-1.21.0.zip -DestinationPath w64devkit
+          Copy-Item -Path .\w64devkit\w64devkit\* -Destination out/mingw64 -Recurse -Force
           Copy-Item -Path mingw64/bin/* -Destination out/mingw64/bin -Recurse -Force
           Copy-Item -Path mingw64/lib/* -Destination out/mingw64/lib -Recurse -Force
-          Copy-Item -Path C:/msys64/mingw64/bin/* -Destination out/mingw64/bin -Recurse -Force
-          Copy-Item -Path C:/msys64/mingw64/lib/* -Destination out/mingw64/lib -Recurse -Force
-          Copy-Item -Path C:/mingw64/lib/* -Destination out/mingw64/lib -Recurse -Force
-          Copy-Item -Path C:/mingw64/bin/* -Destination out/mingw64/bin -Recurse -Force
           Copy-Item -Path mips-toolchain/lib/* -Destination out/mingw64/lib -Recurse -Force
           Copy-Item -Path mips-toolchain/bin/* -Destination out/mingw64/bin -Recurse -Force
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
