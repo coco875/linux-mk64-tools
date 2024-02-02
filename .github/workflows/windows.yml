@@ -62,13 +62,10 @@ jobs:
           msys2 -c 'wget https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libwinpthread-git-11.0.0.r551.g86a5e0f41-1-any.pkg.tar.zst'
           msys2 -c 'zstd -d mingw-w64-x86_64-libwinpthread-git-11.0.0.r551.g86a5e0f41-1-any.pkg.tar.zst -o libwinpthread.tar'
           msys2 -c 'tar -xvf libwinpthread.tar'
-          Copy-Item -Path mingw64/bin/* -Destination out/mingw64/bin -Recurse
-          Copy-Item -Path mingw64/lib/* -Destination out/mingw64/lib -Recurse
-          Copy-Item -Path C:/msys64/mingw64/bin/* -Destination out/mingw64/bin -Recurse
-          Copy-Item -Path C:/msys64/mingw64/lib/* -Destination out/mingw64/lib -Recurse
-          Copy-Item -Path C:/mingw64/bin/* -Destination out/mingw64/bin -Recurse
-          Copy-Item -Path C:/mingw64/lib/* -Destination out/mingw64/lib -Recurse
-          Copy-Item -Path mips-toolchain/bin/* -Destination out/mingw64/bin -Recurse
+          Copy-Item -Path mingw64/* -Destination out/mingw64 -Recurse
+          Copy-Item -Path C:/msys64/mingw64/* -Destination out/mingw64 -Recurse
+          Copy-Item -Path C:/mingw64/* -Destination out/mingw64 -Recurse
+          Copy-Item -Path mips-toolchain/* -Destination out/mingw64 -Recurse
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d python
           msys2 -c 'cp python/* out/mingw64/bin'
