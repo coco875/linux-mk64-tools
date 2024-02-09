@@ -14,9 +14,6 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt install binutils-mips-linux-gnu build-essential pkg-config git binutils-mips-linux-gnu python3 zlib1g-dev libaudiofile-dev
-      - name: Compile tools
-        run: |
-          make
       - name: Create archive
         run: |
           mkdir out

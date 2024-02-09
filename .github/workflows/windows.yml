@@ -15,17 +15,11 @@ jobs:
       - name: Install deps
         run: |
           msys2 -c 'pacman -S mingw-w64-x86_64-gcc pkgconf make gcc --noconfirm'
-      - name: locate package
-        run: |
-          where iconv
       - name: merge gcc toolchain
         run: |
           msys2 -c 'wget https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip'
           unzip gcc-toolchain-mips64-win64.zip -d mips-toolchain
           msys2 -c 'cp mips-toolchain/ -r C:/msys64/mingw64'
-      - name: Compile tools
-        run: |
-          msys2 -c 'make'
       - name: Create archive
         run: |
           mkdir out
