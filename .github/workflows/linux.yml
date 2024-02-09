@@ -21,7 +21,6 @@ jobs:
         run: |
           mkdir out
           mkdir out/tools
-          cp mio0 n64graphics displaylist_packer n64cksum tkmk00 extract_data_for_mio out/tools
           mkdir out/tools/ido5.3_recomp
           wget https://github.com/decompals/ido-static-recomp/releases/download/v1.1/ido-5.3-recomp-linux.tar.gz
           tar -xvzf ido-5.3-recomp-linux.tar.gz -C out/tools/ido5.3_recomp
