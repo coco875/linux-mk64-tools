@@ -35,13 +35,13 @@ jobs:
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d python
           msys2 -c 'cp python/* out/tools/mingw64/bin'
-          mkdir out/tools/ido-static-recomp
-          mkdir out/tools/ido-static-recomp/build
-          mkdir out/tools/ido-static-recomp/build/5.3
-          mkdir out/tools/ido-static-recomp/build/5.3/out
-          msys2 -c 'wget https://github.com/decompals/ido-static-recomp/releases/download/v1.1/ido-5.3-recomp-windows.tar.gz'
-          tar -xvzf ido-5.3-recomp-windows.tar.gz -C out/tools/ido-static-recomp/build/5.3/out
-          cp C:/msys64/usr/bin/msys-2.0.dll out/tools/ido-static-recomp/build/5.3/out
+          mkdir out/tools/ido-recomp
+          mkdir out/tools/ido-recomp/build
+          mkdir out/tools/ido-recomp/build/5.3
+          mkdir out/tools/ido-recomp/build/5.3/out
+          msys2 -c 'wget https://github.com/decompals/ido-recomp/releases/download/v1.1/ido-5.3-recomp-windows.tar.gz'
+          tar -xvzf ido-5.3-recomp-windows.tar.gz -C out/tools/ido-recomp/build/5.3/out
+          cp C:/msys64/usr/bin/msys-2.0.dll out/tools/ido-recomp/build/5.3/out
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
