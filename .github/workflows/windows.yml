@@ -39,7 +39,7 @@ jobs:
           mkdir out/tools/ido-recomp/build
           mkdir out/tools/ido-recomp/build/5.3
           mkdir out/tools/ido-recomp/build/5.3/out
-          msys2 -c 'wget https://github.com/decompals/ido-recomp/releases/download/v1.1/ido-5.3-recomp-windows.tar.gz'
+          msys2 -c 'wget https://github.com/decompals/ido-static-recomp/releases/download/v1.1/ido-5.3-recomp-windows.tar.gz'
           tar -xvzf ido-5.3-recomp-windows.tar.gz -C out/tools/ido-recomp/build/5.3/out
           cp C:/msys64/usr/bin/msys-2.0.dll out/tools/ido-recomp/build/5.3/out
       - name: Publish packaged artifacts
