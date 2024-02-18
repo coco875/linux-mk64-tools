@@ -32,6 +32,7 @@ jobs:
           Copy-Item -Path mips-toolchain/lib/* -Destination out/tools/mingw64/lib -Recurse -Force
           Copy-Item -Path mips-toolchain/bin/* -Destination out/tools/mingw64/bin -Recurse -Force
           Copy-Item -Path .\w64devkit\w64devkit\* -Destination out/tools/mingw64 -Recurse -Force
+          echo home = ../.. >> out/tools/mingw6/w64devkit.ini
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d python
           msys2 -c 'cp python/* out/tools/mingw64/bin'
