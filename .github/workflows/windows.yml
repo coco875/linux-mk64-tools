@@ -17,15 +17,15 @@ jobs:
           mkdir out/mingw64
           mkdir out/mingw64/bin
           mkdir out/mingw64/lib
-          wget https://github.com/skeeto/w64devkit/releases/download/v1.21.0/w64devkit-1.21.0.zip
+          Invoke-WebRequest https://github.com/skeeto/w64devkit/releases/download/v1.21.0/w64devkit-1.21.0.zip
           Expand-Archive -LiteralPath .\w64devkit-1.21.0.zip -DestinationPath w64devkit
-          wget https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip
+          Invoke-WebRequest https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip
           unzip gcc-toolchain-mips64-win64.zip -d mips-toolchain
           Copy-Item -Path mips-toolchain/lib/* -Destination out/mingw64/lib -Recurse -Force
           Copy-Item -Path mips-toolchain/bin/* -Destination out/mingw64/bin -Recurse -Force
           Copy-Item -Path .\w64devkit\w64devkit\* -Destination out/mingw64 -Recurse -Force
           echo "home = ../.." >> out/mingw64/w64devkit.ini
-          wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip
+          Invoke-WebRequest https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip
           unzip python-3.12.1-embed-amd64.zip -d python
           Copy-Item -Path python/* -Destination out/mingw64/bin -Recurse -Force
       - name: Publish packaged artifacts
