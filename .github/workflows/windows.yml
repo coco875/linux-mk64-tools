@@ -11,31 +11,23 @@ jobs:
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
-      - uses: msys2/setup-msys2@v2
-      - name: Install deps
-        run: |
-          msys2 -c 'pacman -S mingw-w64-x86_64-gcc pkgconf make gcc --noconfirm'
-      - name: merge gcc toolchain
-        run: |
-          msys2 -c 'wget https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip'
-          unzip gcc-toolchain-mips64-win64.zip -d mips-toolchain
-          msys2 -c 'cp mips-toolchain/ -r C:/msys64/mingw64'
       - name: Create archive
         run: |
           mkdir out
-          mkdir out/tools
-          mkdir out/tools/mingw64
-          mkdir out/tools/mingw64/bin
-          mkdir out/tools/mingw64/lib
+          mkdir out/mingw64
+          mkdir out/mingw64/bin
+          mkdir out/mingw64/lib
           msys2 -c 'wget https://github.com/skeeto/w64devkit/releases/download/v1.21.0/w64devkit-1.21.0.zip'
           Expand-Archive -LiteralPath .\w64devkit-1.21.0.zip -DestinationPath w64devkit
-          Copy-Item -Path mips-toolchain/lib/* -Destination out/tools/mingw64/lib -Recurse -Force
-          Copy-Item -Path mips-toolchain/bin/* -Destination out/tools/mingw64/bin -Recurse -Force
-          Copy-Item -Path .\w64devkit\w64devkit\* -Destination out/tools/mingw64 -Recurse -Force
-          echo home = ../.. >> out/tools/mingw64/w64devkit.ini
+          msys2 -c 'wget https://github.com/n64-tools/gcc-toolchain-mips64/releases/download/latest/gcc-toolchain-mips64-win64.zip'
+          unzip gcc-toolchain-mips64-win64.zip -d mips-toolchain
+          Copy-Item -Path mips-toolchain/lib/* -Destination out/mingw64/lib -Recurse -Force
+          Copy-Item -Path mips-toolchain/bin/* -Destination out/mingw64/bin -Recurse -Force
+          Copy-Item -Path .\w64devkit\w64devkit\* -Destination out/mingw64 -Recurse -Force
+          echo "home = ../.." >> out/mingw64/w64devkit.ini
           msys2 -c 'wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip'
           unzip python-3.12.1-embed-amd64.zip -d python
-          msys2 -c 'cp python/* out/tools/mingw64/bin'
+          msys2 -c 'cp python/* out/mingw64/bin'
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
