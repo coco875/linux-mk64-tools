@@ -27,6 +27,7 @@ jobs:
           Copy-Item -Path mips-toolchain/bin/* -Destination out/mingw64/bin -Recurse -Force
           Copy-Item -Path .\w64devkit\w64devkit\bin\* -Destination out/mingw64/bin -Recurse -Force
           Copy-Item -Path .\w64devkit\w64devkit\lib\* -Destination out/mingw64/lib -Recurse -Force
+          Copy-Item -Path .\w64devkit\w64devkit\share\* -Destination out/mingw64/share -Recurse -Force
           Copy-Item -Path .\w64devkit\w64devkit\libexec\* -Destination out/mingw64/libexec -Recurse -Force
           Copy-Item -Path .\w64devkit\w64devkit\* -Destination out/mingw64 -Force
           Copy-Item -Path cmake/cmake-3.29.1-windows-x86_64/bin/* -Destination out/mingw64/bin -Recurse -Force
@@ -35,8 +36,9 @@ jobs:
           Invoke-WebRequest https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip -OutFile python-3.12.1-embed-amd64.zip
           unzip python-3.12.1-embed-amd64.zip -d python
           Copy-Item -Path python/* -Destination out/mingw64/bin -Recurse -Force
+          Compress-Archive -Recurse out out.zip
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
           name: mips-tools-chain-windows
-          path: out
+          path: out.zip
