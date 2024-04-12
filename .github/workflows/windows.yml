@@ -32,7 +32,7 @@ jobs:
           Invoke-WebRequest https://www.python.org/ftp/python/3.12.1/python-3.12.1-embed-amd64.zip -OutFile python-3.12.1-embed-amd64.zip
           unzip python-3.12.1-embed-amd64.zip -d python
           Copy-Item -Path python/* -Destination out/mingw64/bin -Recurse -Force
-          Compress-Archive -Recurse out out.zip
+          Compress-Archive out out.zip
       - name: Publish packaged artifacts
         uses: actions/upload-artifact@v4
         with:
